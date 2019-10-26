@@ -1,0 +1,10 @@
+SQL> desc Airtel_callertune2;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ CUSTID                                             NUMBER(5)
+ CUSTNAME                                           VARCHAR2(20)
+ MOBILENO                                           NUMBER(10)
+ CALLERTUNE                                         VARCHAR2(10)
+ LASTUPDATED                                        TIMESTAMP(6)
+ SUBSCRIBEDDATE                                     TIMESTAMP(6)
+ CHANGESCOUNT                                       NUMBER(5)

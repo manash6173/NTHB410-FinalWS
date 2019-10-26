@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated May 22, 2019 5:46:32 PM by Hibernate Tools 5.2.3.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class dynamic-insert="false" dynamic-update="false" mutable="true" name="com.nt.entity.NGOMember" optimistic-lock="version" polymorphism="implicit" schema="SYSTEM" select-before-update="false" table="NGOMEMBER">
+        <id name="mid" type="int">
+            <column name="MID" precision="5" scale="0"/>
+            <generator class="assigned"/>
+        </id>
+        <property generated="never" lazy="false" name="mname" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="MNAME"/>
+        </property>
+        <property generated="never" lazy="false" name="desg" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="DESG"/>
+        </property>
+        <property generated="never" lazy="false" name="salary" optimistic-lock="true" type="float" unique="false">
+            <column name="SALARY" precision="10"/>
+        </property>
+    </class>
+</hibernate-mapping>

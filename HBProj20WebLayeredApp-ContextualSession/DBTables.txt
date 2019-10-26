@@ -1,0 +1,1 @@
+SQL> create  table Project(projId number(6) primary key,projName varchar2(10),teamSize number(2),domain varchar2(10),sdp Date,edcp  date);

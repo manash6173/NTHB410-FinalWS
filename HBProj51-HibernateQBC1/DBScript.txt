@@ -1,0 +1,1 @@
+SQL> create table Viechle(vid number(5) primary key,type varchar2(20),model varchar2(10),company varchar2(10),price float);

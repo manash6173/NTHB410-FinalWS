@@ -1,0 +1,2 @@
+create table persons_profile(pid number(5) primary key,pname varchar2(20),
+  2  age number(5),houseno varchar2(10),street varchar2(10),area varchar2(10),pincode number(6));

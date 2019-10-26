@@ -1,0 +1,23 @@
+<web-app>
+  <display-name>HBProj18WebLayeredApp</display-name>
+  <welcome-file-list>
+    <welcome-file>find_project.html</welcome-file>
+  </welcome-file-list>
+  
+  
+  <listener>
+     <listener-class>com.nt.listeners.SessionFactoryMgmtListener</listener-class>
+  </listener>
+  
+   <servlet>
+      <servlet-name>main</servlet-name>
+      <servlet-class>com.nt.controller.MainControllerServlet</servlet-class>
+      <load-on-startup>1</load-on-startup>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>main</servlet-name>
+      <url-pattern>/controller</url-pattern>
+   </servlet-mapping>
+  
+  
+</web-app>

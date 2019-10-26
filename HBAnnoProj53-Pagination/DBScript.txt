@@ -1,0 +1,7 @@
+SQL> desc Employee;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ENO                                       NOT NULL NUMBER(5)
+ ENAME                                              VARCHAR2(20)
+ DESG                                               VARCHAR2(20)
+ SALARY                                             NUMBER(10,2)

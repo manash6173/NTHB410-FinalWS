@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+  <hibernate-mapping>
+     <class name="com.nt.entity.Employee"  table="NIT_EMPLOYEE">
+        <!-- Singular ID field cfg -->
+        <id name="eno"  column="EID" type="string" length="10">
+          <generator class="com.nt.generator.NITSequenceIdGenerator"/>
+        </id>
+        <!-- other properties cfg -->
+        <property name="ename"  column="ENAME" type="string" length="10"/>
+        <property name="desg"  column="DESG" type="string" length="10"/>
+        <property name="salary" column="SALARY"  type="float" precision="2" scale="10"/>
+     </class>
+  </hibernate-mapping>        

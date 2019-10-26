@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 15, 2019 5:55:25 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.nt.entity.Person" table="INH_PERSONS4" polymorphism="implicit" >
+        <id name="id" type="int" >
+            <column name="ID" length="7" />
+            <generator class="increment" />
+        </id>
+        <property name="name" type="string">
+            <column name="NAME" length="10" />
+        </property>
+        
+        <property name="company" type="string">
+            <column name="COMPANY" length="10"/>
+        </property>
+  </class>   
+     
+   <class name="com.nt.entity.Employee"  table="INH_EMPLOYEE4">
+        <id name="id" type="int" >
+            <column name="ID" length="7" />
+            <generator class="increment" />
+        </id>
+        <property name="name" type="string">
+            <column name="NAME" length="10" />
+        </property>
+        
+        <property name="company" type="string">
+            <column name="COMPANY" length="10"/>
+        </property>
+           <property name="desg" type="string">
+             <column name="DESG" length="10"/>
+           </property>
+           <property name="salary" type="float">
+             <column name="SALARY" length="10" precision="2"/>
+           </property>
+    </class>
+    <class name="com.nt.entity.Customer" table="INH_CUSTOMER4"  >
+         <id name="id" type="int" >
+            <column name="ID" length="7" />
+            <generator class="increment" />
+        </id>
+        <property name="name" type="string">
+            <column name="NAME" length="10" />
+        </property>
+        
+        <property name="company" type="string">
+            <column name="COMPANY" length="10"/>
+        </property>
+            <property name="addrs" type="string">
+               <column name="ADDRS" length="10"/>
+            </property>
+            <property name="billAmt" type="float">
+               <column name="BILLAMT" length="10" precision="2"/>
+            </property>
+        </class>
+    
+</hibernate-mapping>

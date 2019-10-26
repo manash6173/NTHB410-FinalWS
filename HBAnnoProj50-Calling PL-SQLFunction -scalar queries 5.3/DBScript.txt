@@ -1,0 +1,9 @@
+  create or replace function  fx_get_policies_by_company(comp in varchar)
+     return sys_refcursor
+    as
+         details sys_refcursor;
+    begin
+        open details for
+                select policyId,policyName,tenure from InsurancePolicy where company=comp;
+    return details;
+   end;

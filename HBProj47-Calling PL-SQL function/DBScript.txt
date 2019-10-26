@@ -1,0 +1,11 @@
+create or replace function fx_get_Policies_by_tenure(startRange in number,
+                                                                                                endRange in number)
+return sys_refcursor
+ as
+    details sys_refcursor;
+begin
+     open details for
+            select policyId,policyname,tenure from Insurancepolicy where tenure>=startRange and tenure<=endRange;
+return details;
+end;
+/

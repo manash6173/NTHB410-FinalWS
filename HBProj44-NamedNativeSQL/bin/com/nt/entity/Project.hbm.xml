@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated May 25, 2019 5:46:16 PM by Hibernate Tools 5.2.3.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class dynamic-insert="false" dynamic-update="false" mutable="true" name="com.nt.entity.Project" optimistic-lock="version" polymorphism="implicit" schema="SYSTEM" select-before-update="false" table="PROJECT">
+        <id name="projid" type="short">
+            <column name="PROJID" precision="4" scale="0"/>
+            <generator class="increment"/>
+        </id>
+        <property generated="never" lazy="false" name="projname" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="PROJNAME"/>
+        </property>
+        <property generated="never" lazy="false" name="teamsize" optimistic-lock="true" type="java.lang.Short" unique="false">
+            <column name="TEAMSIZE" precision="3" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="startdate" optimistic-lock="true" type="date" unique="false">
+            <column length="7" name="STARTDATE"/>
+        </property>
+        <property generated="never" lazy="false" name="releasedate" optimistic-lock="true" type="date" unique="false">
+            <column length="7" name="RELEASEDATE"/>
+        </property>
+    </class>
+    <sql-query name="GET_PROJS_BY_TEAMSIZE">
+      <return class="com.nt.entity.Project"/>
+      <![CDATA[
+        SELECT PROJID,PROJNAME,TEAMSIZE,STARTDATE,RELEASEDATE FROM PROJECT WHERE TEAMSIZE>=:min AND TEAMSIZE<=:max
+      ]]>
+    </sql-query>
+    
+    <sql-query name="GET_RPOJS_BY_PROJIDS_RANGE">
+       <return-scalar column="PROJID" type="int"/>
+       <return-scalar column="PROJNAME" type="string"/>
+         <![CDATA[
+        SELECT PROJID,PROJNAME FROM PROJECT WHERE PROJID>=:min AND PROJID<=:max 
+      ]]>
+    </sql-query>
+</hibernate-mapping>

@@ -1,0 +1,11 @@
+SQL> select * from  Bank_account;
+
+      ACNO HODLERNAME              BALANCE STATUS
+---------- -------------------- ---------- ----------
+      1001 raja                      23000 ACTIVE
+      1002 promod                    75000 BLOCKED
+      1003 suresh                    40000 SUSPENDED
+      1005 pandit                     1000 ACTIVE
+      1006 isha                      45000 CLOSED
+      1007 jani                       3000 ACTIVE
+      1008 Ambani                    70000 ACTIVE

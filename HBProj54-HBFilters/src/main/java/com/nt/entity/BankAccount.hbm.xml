@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 11, 2019 5:57:02 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.nt.entity.BankAccount" table="BANK_ACCOUNT">
+        <id name="acno" type="int">
+            <column name="ACNO" />
+            <generator class="increment" />
+        </id>
+        <property name="hodlerName" type="java.lang.String">
+            <column name="HODLERNAME" />
+        </property>
+        <property name="balance" type="float">
+            <column name="BALANCE" />
+        </property>
+        <property name="status" type="java.lang.String">
+            <column name="STATUS" />
+        </property>
+        <filter name="FILTER_REMOVE_ACCOUNTS"  condition="STATUS NOT IN(:type1,:type2,:type3)"/>
+    </class>
+    
+    <filter-def name="FILTER_REMOVE_ACCOUNTS">
+       <filter-param name="type1" type="string"/>
+       <filter-param name="type2" type="string"/>
+       <filter-param name="type3" type="string"/>
+    </filter-def>
+    
+</hibernate-mapping>

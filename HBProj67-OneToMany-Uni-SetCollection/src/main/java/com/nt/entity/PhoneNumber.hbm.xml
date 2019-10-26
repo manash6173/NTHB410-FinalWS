@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 28, 2019 5:08:02 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.nt.entity.PhoneNumber" table="PHONE_NUMBERS">
+       
+        <id name="phone" type="long">
+            <column name="PHONE" length="10" />
+        </id>
+        <property name="provider" type="string">
+            <column name="PROVIDER" length="10" />
+        </property>
+       
+        <property name="numberType" type="string">
+            <column name="NUMBERTYPE" length="10" />
+        </property>
+    </class>
+</hibernate-mapping>

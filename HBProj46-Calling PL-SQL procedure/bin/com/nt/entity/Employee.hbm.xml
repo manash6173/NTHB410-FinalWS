@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+  <hibernate-mapping>
+     <class name="com.nt.entity.Employee"  table="EMPLOYEE">
+        <!-- Singular ID field cfg -->
+        <id name="eno"  column="eno" type="int" length="10">
+          <generator class="increment"/>
+        </id>
+        <!-- other properties cfg -->
+        <property name="ename"  column="ENAME" type="string" length="10"/>
+        <property name="desg"  column="DESG" type="string" length="10"/>
+        <property name="salary" column="SALARY"  type="float" precision="2" scale="10"/>
+     </class>
+     
+     <sql-query name="CALL_PRO" callable="true">
+       <return class="com.nt.entity.Employee"/>
+       <![CDATA[
+             { call  p_get_emps_by_enos_range(?,?,?)}
+       ]]>
+     </sql-query>
+  </hibernate-mapping>        

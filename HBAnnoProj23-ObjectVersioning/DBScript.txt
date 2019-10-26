@@ -1,0 +1,1 @@
+SQL> create table Airtel_CallerTune(custId number(5) primary key,custName varchar2(20), mobileNo number(10),callerTune varchar2(10),updationsCount number(5));

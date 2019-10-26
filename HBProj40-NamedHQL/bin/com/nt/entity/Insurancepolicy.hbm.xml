@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated May 20, 2019 5:03:10 PM by Hibernate Tools 5.2.3.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class dynamic-insert="false" dynamic-update="false" mutable="true" name="com.nt.entity.Insurancepolicy" optimistic-lock="version" polymorphism="implicit" schema="SYSTEM" select-before-update="false" table="INSURANCEPOLICY">
+        <id name="policyid" type="int">
+            <column name="POLICYID" precision="5" scale="0"/>
+            <generator class="increment"/>
+        </id>
+        <property generated="never" lazy="false" name="policyname" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="POLICYNAME"/>
+        </property>
+        <property generated="never" lazy="false" name="tenure" optimistic-lock="true" type="java.lang.Long" unique="false">
+            <column name="TENURE" precision="10" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="company" optimistic-lock="true" type="string" unique="false">
+            <column length="10" name="COMPANY"/>
+        </property>
+        <property generated="never" lazy="false" name="initialamount" optimistic-lock="true" type="float" unique="false">
+            <column name="INITIALAMOUNT" precision="10"/>
+        </property>
+    </class>
+    <query name="HQL_GET_POLICIES_BY_TENURE">
+       <![CDATA[
+           from Insurancepolicy where tenure>=:min and tenure<=:max ]]>
+    </query> 
+</hibernate-mapping>

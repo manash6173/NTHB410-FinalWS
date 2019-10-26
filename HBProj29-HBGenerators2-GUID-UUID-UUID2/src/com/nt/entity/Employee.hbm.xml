@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+  <hibernate-mapping>
+     <class name="com.nt.entity.Employee"  table="UID_EMPLOYEE">
+        <!-- Singular ID field cfg -->
+        <id name="eno"  column="EID" type="string" length="40">
+          <!-- <generator class="assigned"/> -->
+          <!-- <generator class="org.hibernate.id.Assigned"/> -->
+<!--           <generator class="increment"/> -->
+          <!-- <generator class="identity"/> -->
+       <!--    <generator class="sequence"/> -->
+       <!-- <generator class="sequence">
+           <param name="sequence_name">EID_SEQ1</param>
+       </generator> -->
+       <!--  <generator class="hilo">
+            <param name="table">source_hi</param>
+            <param name="column">hi</param>
+            <param name="max_lo">5</param>
+        </generator> -->
+        
+        
+       <!--   <generator class="hilo">
+            <param name="max_lo">5</param>
+        </generator> -->
+        
+        <!-- <generator class="seqhilo">
+          <param name="sequence">EID_SEQ11</param>
+          <param name="max_lo">5</param>
+        </generator> -->
+         <!-- <generator class="native"/> -->
+       <!--  <generator class="native">
+           <param name="sequence_name">eid_seq11</param>
+        </generator> -->
+        
+<!--         <generator class="native"/> -->
+           <!-- <generator class="guid"/> -->
+           <!-- <generator class="uuid"/> -->
+           <generator class="uuid">
+              <param name="seperator"/>
+           </generator>
+           <!--  <generator class="uuid2"/> -->
+           
+        
+        </id>
+        <!-- other properties cfg -->
+        <property name="ename"  column="ENAME" type="string" length="10"/>
+        <property name="desg"  column="DESG" type="string" length="10"/>
+        <property name="salary" column="SALARY"  type="float" precision="2" scale="10"/>
+     </class>
+  </hibernate-mapping>        
